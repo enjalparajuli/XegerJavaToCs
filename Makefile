@@ -11,11 +11,7 @@ lib/main.o: c/main.cc
 
 lib/main: lib/main.o
 	$(CC) -v -o $@ -L${JAVA_HOME}/jre/lib/server/ $^ -ljvm
-
-# lib/main-Recent: 
-# 	g++ -g -I${JAVA_HOME}/include/ -I${JAVA_HOME}/include/linux/ -L/usr/bin/java\
-# 	-L${JAVA_HOME}/jre/lib/amd64/server/ c/main.cc -o lib/main -ljvm
-
+	
 test: lib/main target/simple/JavaCode.class
 	lib/main
 clean:
